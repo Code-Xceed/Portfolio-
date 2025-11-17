@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeXceed</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add favicon -->
+    <link rel="icon" href="favicon.png">
+    <!-- Preload video for faster loading -->
+    <link rel="preload" href="bg.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="night.mp4" as="video" type="video/mp4">
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+
+    <!-- Video background container -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline id="bg-video" preload="auto">
+            <source src="bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Mode switch button -->
+    <div class="mode-switch" id="mode-switch" role="button" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+        <span>Night Mode</span>
+    </div>
+
+    <!-- Audio element for music -->
+    <audio id="background-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Player Controls -->
+    <div class="music-player" role="toolbar" aria-label="Music player controls">
+        <div class="music-controls">
+            <div class="music-btn" id="play-pause-btn" role="button" aria-label="Play or pause music">
+                <i class="fas fa-play" id="play-icon" aria-hidden="true"></i>
+            </div>
+            <div class="music-btn" id="mute-btn" role="button" aria-label="Mute or unmute music">
+                <i class="fas fa-volume-up" id="volume-icon" aria-hidden="true"></i>
+            </div>
+            <input type="range" class="volume-slider" id="volume-slider" min="0" max="50" value="40" aria-label="Adjust volume">
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Navbar moved to top -->
+        <div class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="nav-icons" role="tablist">
+                <div class="nav-icon" data-section="home" role="tab" aria-selected="true" aria-controls="home" tabindex="0">
+                    <i class="fas fa-house-user" aria-hidden="true"></i>
+                    <span>Home</span>
+                </div>
+                <div class="nav-icon" data-section="about" role="tab" aria-selected="false" aria-controls="about" tabindex="0">
+                    <i class="fas fa-address-card" aria-hidden="true"></i>
+                    <span>About</span>
+                </div>
+                <div class="nav-icon" data-section="skills" role="tab" aria-selected="false" aria-controls="skills" tabindex="0">
+                    <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    <span>Skills</span>
+                </div>
+                <div class="nav-icon" data-section="projects" role="tab" aria-selected="false" aria-controls="projects" tabindex="0">
+                    <i class="fas fa-diagram-project" aria-hidden="true"></i>
+                    <span>Projects</span>
+                </div>
+                <div class="nav-icon" data-section="contact" role="tab" aria-selected="false" aria-controls="contact" tabindex="0">
+                    <i class="fas fa-message" aria-hidden="true"></i>
+                    <span>Contact</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Message Box moved to bottom -->
+        <main id="message-box" class="message-box" aria-live="polite">
+            <div class="message-close" role="button" aria-label="Close message box" tabindex="0">×</div>
+            
+            <!-- Home Section -->
+            <section id="home" class="section-content" role="tabpanel">
+                <h1 class="animate-on-scroll">Welcome to My Portfolio</h1>
+                <p class="tagline animate-on-scroll">Frontend Developer & UI/UX Designer</p>
+                <div class="name-highlight animate-on-scroll">Aditya</div>
+                <br>
+                <pre class="intro-text animate-on-scroll">Creating harmony between nature and technology
+#Nature Lover
+                </pre>
+                
+                <div class="home-highlights">
+                    <div class="highlight-card animate-on-scroll">
+                        <i class="fas fa-leaf" aria-hidden="true"></i>
+                        <h3>Sustainable Design</h3>
+                        <p>Creating efficient, lightweight experiences that perform beautifully</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                        <h3>Growing Skills</h3>
+                        <p>Constantly evolving expertise in modern web development frameworks</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll">
+                        <i class="fas fa-mountain" aria-hidden="true"></i>
+                        <h3>Peak Performance</h3>
+                        <p>Building solutions that maintain high performance across all devices</p>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator animate-on-scroll" role="button" tabindex="0">
+                    <span>Explore My Work</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </div>
+            </section>
+            
+            <!-- About Section -->
+            <section id="about" class="section-content" role="tabpanel">
+                <h2 class="animate-on-scroll">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <p>Hi there! I'm a passionate web developer with a love for creating beautiful, responsive, and user-friendly websites. Drawing inspiration from nature, I bring organic elements into my digital creations.</p>
+                        <p>When I'm not coding, you might find me hiking through lush forests or capturing the perfect sunrise photo, finding inspiration in the natural world around us.</p>
+                        <p>My goal is to create digital experiences that feel as refreshing and immersive as a walk through nature.</p>
+                    </div>
+                    
+                    <div class="about-stats animate-on-scroll">
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">7+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-timeline animate-on-scroll">
+                        <h3>My Journey</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>2023 - Started</h4>
+                                    <p>Started learning web development</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>2024 - Last Year</h4>
+                                    <p>Explored new technologies and frameworks</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>2025 - Present</h4>
+                                    <p>UI/UX Designer / Freelancer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section id="skills" class="section-content" role="tabpanel">
+                <h2 class="animate-on-scroll">My Skills</h2>
+                
+                <div class="skills-categories">
+                    <div class="skill-category animate-on-scroll">
+                        <h3>Frontend Development</h3>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-html5" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">HTML5</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-css3-alt" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">CSS3 & SASS</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-js" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">JavaScript</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-react" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">React</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="30%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll">
+                        <h3>Design & Tools</h3>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-paint-brush" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">UI/UX Design</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-figma" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">Figma</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">Responsive Design</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-code-branch" aria-hidden="true"></i></div>
+                                <div class="skill-info">
+                                    <div class="skill-name">Git & GitHub</div>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" data-level="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack animate-on-scroll">
+                    <h3>Technologies I Work With</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">AI Tools</span>
+                        <span class="tech-badge">Automation</span>
+                        <span class="tech-badge">HTML / CSS</span>
+                        <span class="tech-badge">Tailwind CSS</span>
+                        <span class="tech-badge">Bootstrap 5</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Netlify</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section id="projects" class="section-content" role="tabpanel">
+                <h2 class="animate-on-scroll">My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll" data-category="web design">
+                        <span class="project-tag">Featured</span>
+                        <div class="project-image" style="background-image: url('https://source.unsplash.com/random/800x600/?nature,blog')"></div>
+                        <div class="project-content">
+                            <h3>YT Media Converter</h3>
+                            <p>Convert YouTube videos to MP3, MP4, and more with ease. Download your favorite videos / Audio / Playlist / Thumbnails in just a few clicks. </p>
+                            <div class="project-tech">
+                                <span>HTML / CSS</span>
+                                <span>Python</span>
+                                <span>Flask</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://drive.google.com/file/d/1SNl8iM2_EdK_8VXLwRH1V5p4yZGovY4Z/view?pli=1" class="project-link"><i class="fas fa-external-link-alt" aria-hidden="true"></i>Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card animate-on-scroll" data-category="web app">
+                        <div class="project-image" style="background-image: url('https://source.unsplash.com/random/800x600/?ecommerce,eco')"></div>
+                        <div class="project-content">
+                            <h3>Paid SMS</h3>
+                            <p>Online service for receiving phone messages to virtual numbers Use virtual number to receive SMS or Rent them to receive activation codes via messages</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://paidsms.netlify.app" target="_blank" class="project-link"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-more-container animate-on-scroll">
+                    <a  class="view-more-btn">More Projects Coming Soon<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="section-content" role="tabpanel">
+                <h2 class="animate-on-scroll">Get In Touch</h2>
+                
+                <div class="contact-intro animate-on-scroll">
+                    <p>I'm currently available for freelance work and exciting opportunities. Feel free to reach out if you have a project in mind or just want to connect!</p>
+                </div>
+                
+                <div class="contact-container">
+                    <form class="contact-form animate-on-scroll" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="254d0f1e-62a2-41bc-9fa1-c5a96bd7ae0e">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="message"  placeholder="What is this regarding?">
+                        </div>
+                        	<input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+			<input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        <button type="submit" class="submit-btn">Send Message<i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                    
+                    <div class="contact-info animate-on-scroll">
+                        <div class="contact-card">
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <a>aditya.rathore10101@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <a href="tel:+1234567890">(+91) 9460703416</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                                <div class="contact-details">
+                                    <h3>Location</h3>
+                                    <p>INDIA, Rajasthan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-connect">
+                            <h3>Connect With Me</h3>
+                            <div class="social-links">
+                                <a href="https://www.youtube.com/channel/UCv4lewSF-uek7YQ8FG8THqw" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/aditya-rathore-87a0a7331/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/code_x_ceed/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="availability">
+                            <h3>Availability</h3>
+                            <p>Currently taking on new projects for 2025</p>
+                            <div class="availability-indicator available">
+                                <span class="dot"></span> Available for Freelance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="cursor"></div>
+    <a id="back-to-top" class="back-to-top" role="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+    <script src="script.js"></script>
+</body>
+</html> 
